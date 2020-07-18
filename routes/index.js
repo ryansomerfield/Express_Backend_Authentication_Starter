@@ -5,7 +5,7 @@ const router = express.Router();
 //If no user, redirect to login
 router.get("/*", (req, res, next) => {
   if (!req.user) {
-    res.redirect("./auth/");
+    res.redirect(`${process.env.API_BASE}auth/`);
   } else {
     next();
   }
